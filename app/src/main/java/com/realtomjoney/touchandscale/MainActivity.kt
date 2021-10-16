@@ -16,6 +16,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setBindings()
+
+        scaleGestureDetector = ScaleGestureDetector(this, ScaleListener(binding.redView))
     }
 
     private fun setBindings() {
