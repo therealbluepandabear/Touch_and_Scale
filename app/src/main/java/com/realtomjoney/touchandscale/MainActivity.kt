@@ -2,6 +2,7 @@ package com.realtomjoney.touchandscale
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.ScaleGestureDetector
 import android.view.View
 import com.realtomjoney.touchandscale.databinding.ActivityMainBinding
@@ -18,6 +19,11 @@ class MainActivity : AppCompatActivity() {
         setBindings()
 
         scaleGestureDetector = ScaleGestureDetector(this, ScaleListener(binding.redView))
+    }
+
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        scaleGestureDetector.onTouchEvent(event)
+        return true
     }
 
     private fun setBindings() {
