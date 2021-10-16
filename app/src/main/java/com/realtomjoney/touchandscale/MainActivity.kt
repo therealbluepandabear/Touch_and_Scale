@@ -4,15 +4,23 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ScaleGestureDetector
 import android.view.View
+import com.realtomjoney.touchandscale.databinding.ActivityMainBinding
 import java.lang.Float.max
 import java.lang.Float.min
 
 class MainActivity : AppCompatActivity() {
     lateinit var scaleGestureDetector: ScaleGestureDetector
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setBindings()
+    }
+
+    private fun setBindings() {
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
 
